@@ -1,7 +1,5 @@
-// components/GameHoverCard.jsx
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 
 // List of Twitch Categories to not display game data for
 const ignoreGameTitle = [
@@ -460,8 +458,11 @@ export default function GameHoverCard({ gameName }) {
   };
 
   const handleMouseLeave = (e) => {
-    // Only hide if mouse is truly leaving the component
-    if (!containerRef.current?.contains(e.relatedTarget)) {
+    if (e.relatedTarget !== null && e.relatedTarget !== undefined) {
+      if (!containerRef.current?.contains(e.relatedTarget)) {
+        setShowCard(false);
+      }
+    } else {
       setShowCard(false);
     }
   };
@@ -590,17 +591,17 @@ export default function GameHoverCard({ gameName }) {
                     })}
               </div>
               <h5
-                style={{ margin: "10px 0", color: "white", fontSize: "15px" }}
+                style={{ margin: "10px 0", color: "white", fontSize: "14px" }}
               >
                 <strong>{gameData.name}</strong>
               </h5>
-              <p style={{ margin: "5px 0", color: "white" }}>
+              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
                 Price: {gameData.price || "Price unavailable"}
               </p>
-              <p style={{ margin: "5px 0", color: "white" }}>
+              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
                 Genres: {gameData.genres?.join(", ") || "N/A"}
               </p>
-              <p style={{ margin: "5px 0", color: "white" }}>
+              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
                 Release Date: {gameData.first_release_date || "Unknown"}
               </p>
               <div

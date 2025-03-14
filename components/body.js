@@ -30,6 +30,7 @@ const Body = () => {
     "Talk Shows & Podcasts",
     "Makers & Crafting",
     "Virtual Casino",
+    "Counter-Strike",
   ];
 
   useEffect(() => {
@@ -61,7 +62,6 @@ const Body = () => {
         );
       }
     };
-    // Wait for content load and DOM stabilization
     setTimeout(animate, 500);
   }, []);
 
@@ -150,7 +150,7 @@ const Body = () => {
             className="absolute"
             style={{
               left: "-240px",
-              top: "-210px",
+              top: "-240px",
               width: "200px",
               textAlign: "center",
               transform: "rotate(-5deg)",
@@ -165,7 +165,8 @@ const Body = () => {
                 display: "inline-block",
               }}
             >
-              Hover over the game category to get details seamlessly!
+              Hover over the game category to get details without any
+              interruptions!
             </p>
           </div>
           <div
