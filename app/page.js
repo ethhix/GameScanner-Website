@@ -1,11 +1,15 @@
 import Header from "../components/header";
 import Body from "../components/body";
+import Footer from "../components/footer";
 
 const Page = () => {
   return (
-    <div className="container mx-auto">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <Body />
+      <main className="flex-grow">
+        <Body />
+      </main>
+      <Footer />
     </div>
   );
 };
