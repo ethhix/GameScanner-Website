@@ -22,7 +22,7 @@ const Header = () => {
           <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-8xl jersey-20-regular">
             GameScanner Extension
           </h1>
-          <h3 className="sub-text absolute -right-2 sm:-right-4 md:-right-8 lg:-right-14 bottom-0 text-[#AC81FF] text-xl sm:text-2xl md:text-3xl lg:text-5xl jersey-10-regular transform translate-y-1/4 -rotate-25">
+          <h3 className="sub-text absolute -right-2 sm:-right-4 md:-right-8 lg:-right-14 bottom-1 text-[#AC81FF] text-xl sm:text-2xl md:text-3xl lg:text-5xl jersey-10-regular transform translate-y-1/4 -rotate-25">
             For Twitch!
           </h3>
         </div>
