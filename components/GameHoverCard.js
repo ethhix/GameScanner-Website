@@ -506,11 +506,11 @@ export default function GameHoverCard({ gameName }) {
           style={{
             position: "absolute",
             zIndex: "9999",
-            minWidth: "250px",
+            minWidth: "260px",
             maxWidth: "300px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
             borderRadius: "4px",
-            fontSize: "14px",
+            fontSize: "13px",
             fontFamily: "Roobert, sans-serif",
             marginTop: "0",
           }}
@@ -591,17 +591,17 @@ export default function GameHoverCard({ gameName }) {
                     })}
               </div>
               <h5
-                style={{ margin: "10px 0", color: "white", fontSize: "14px" }}
+                style={{ margin: "10px 0", color: "white", fontSize: "15px" }}
               >
                 <strong>{gameData.name}</strong>
               </h5>
-              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
+              <p style={{ margin: "5px 0", color: "white" }}>
                 Price: {gameData.price || "Price unavailable"}
               </p>
-              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
+              <p style={{ margin: "5px 0", color: "white" }}>
                 Genres: {gameData.genres?.join(", ") || "N/A"}
               </p>
-              <p style={{ margin: "5px 0", color: "white", fontSize: "13px" }}>
+              <p style={{ margin: "5px 0", color: "white" }}>
                 Release Date: {gameData.first_release_date || "Unknown"}
               </p>
               <div
