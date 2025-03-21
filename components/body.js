@@ -31,16 +31,17 @@ const Body = () => {
     "Makers & Crafting",
     "Virtual Casino",
     "Counter-Strike",
+    "Warcraft III",
+    "PUBG: BATTLEGROUNDS",
+    "VALORANT",
   ];
 
   useEffect(() => {
     fetchGameStream();
 
     const interval = setInterval(() => {
-      if (currentStream) {
-        checkStreamStatus(currentStream.user_login);
-      }
-    }, 300000); // Check every 5 minutes
+      fetchGameStream();
+    }, 300000);
 
     return () => clearInterval(interval);
   }, []);
@@ -62,13 +63,21 @@ const Body = () => {
         );
       }
     };
-    setTimeout(animate, 500);
-  }, []);
+    if (!loading && currentStream) {
+      const timer = setTimeout(animate, 500);
+      return () => {
+        clearTimeout(timer);
+        if (descriptionRef.current) {
+          gsap.killTweensOf(descriptionRef.current);
+        }
+      };
+    }
+  }, [loading, currentStream]);
 
   const fetchGameStream = async () => {
     try {
       setLoading(true);
-      const response = await fetch("/api/twitch?action=getStreams&limit=5");
+      const response = await fetch("/api/twitch?action=getStreams&limit=10");
 
       if (!response.ok) {
         throw new Error("Failed to fetch streams");
@@ -76,7 +85,6 @@ const Body = () => {
 
       const data = await response.json();
 
-      // Filter out non-game streams
       const gameStreams = data.data.filter(
         (stream) => !ignoreGameTitle.includes(stream.game_name)
       );
@@ -85,35 +93,13 @@ const Body = () => {
         throw new Error("No game streams available");
       }
 
-      setCurrentStream(gameStreams[0]);
+      const shuffledStreams = [...gameStreams].sort(() => Math.random() - 0.5);
+
+      setCurrentStream(shuffledStreams[0]);
       setLoading(false);
     } catch (error) {
       setError(error.message);
       setLoading(false);
-    }
-  };
-
-  const checkStreamStatus = async (username) => {
-    try {
-      const response = await fetch(
-        `/api/twitch?action=checkStream&username=${username}`
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to check stream");
-      }
-
-      const data = await response.json();
-
-      if (
-        data.data.length === 0 ||
-        ignoreGameTitle.includes(data.data[0].game_name)
-      ) {
-        // Stream is offline or changed to non-game category
-        fetchGameStream();
-      }
-    } catch (error) {
-      console.error("Error checking stream:", error);
     }
   };
 
