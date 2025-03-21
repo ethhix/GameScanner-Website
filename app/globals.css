@@ -69,6 +69,12 @@ body {
   font-style: normal;
 }
 
+ol,
+ul,
+menu {
+  list-style: inside;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;
