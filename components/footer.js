@@ -3,11 +3,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a1523] text-white py-8 mt-12">
+    <footer className="bg-[#1a1523] text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row flex-wrap justify-center items-start gap-4">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center items-start">
           <div className="md:flex-1 md:max-w-[300px] text-center mx-auto">
-            <h3 className="text-lg font-bold mb-2 underline">GameScanner</h3>
+            <h3 className="jersey-20-regular text-2xl font-bold mb-2 underline">
+              GameScanner
+            </h3>
             <p className="text-gray-300 text-base mb-2">
               Enhance your Twitch viewing experience with instant game
               information.
@@ -33,7 +35,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://chrome.google.com/webstore/detail/your-extension-id"
+                href="https://chrome.google.com/webstore/detail/bhmmmhohnnccohmpdhhgpimchaiagddc"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chrome Web Store"
@@ -52,8 +54,10 @@ const Footer = () => {
           </div>
 
           <div className="md:flex-1 md:max-w-[300px] text-center mx-auto">
-            <h3 className="text-lg font-bold mb-2 underline">Links</h3>
-            <ul className="space-y-1 text-base">
+            <h3 className="jersey-20-regular text-2xl font-bold mb-2 underline">
+              Links
+            </h3>
+            <ul style={{ listStyle: "none" }} className="space-y-1 text-base">
               <li>
                 <Link
                   href="/privacy"
@@ -62,16 +66,13 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <Link href="/terms" className="text-gray-300 hover:text-white">
-                  Terms of Service
-                </Link>
-              </li>
             </ul>
           </div>
 
           <div className="md:flex-1 md:max-w-[300px] text-center mx-auto">
-            <h3 className="text-lg font-bold mb-2 underline">Contact</h3>
+            <h3 className="jersey-20-regular text-2xl font-bold mb-2 underline">
+              Contact
+            </h3>
             <p className="text-gray-300 text-base mb-1">
               Have questions or feedback?
             </p>
