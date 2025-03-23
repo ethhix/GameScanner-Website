@@ -26,7 +26,6 @@ function chromeLink() {
         );
       }
     };
-    // Wait for content load and DOM stabilization
     setTimeout(animate, 500);
   }, []);
 
@@ -35,8 +34,8 @@ function chromeLink() {
       <div
         className="absolute"
         style={{
-          left: "560px",
-          top: "-160px",
+          left: "570px",
+          top: "-180px",
           width: "200px",
           textAlign: "center",
           transform: "rotate(-5deg)",
@@ -51,17 +50,21 @@ function chromeLink() {
             display: "inline-block",
           }}
         >
-          Download here!
+          Add to your browser here!
         </p>
       </div>
       <div
         className="absolute z-[-1]"
-        style={{ top: "-435px", right: "-660px" }}
+        style={{ top: "-430px", right: "-670px" }}
       >
         <Image src={ArrowSvg} alt="Arrow" />
       </div>
       <div>
-        <a href="" className="">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://chrome.google.com/webstore/detail/bhmmmhohnnccohmpdhhgpimchaiagddc"
+        >
           <Image src={ChromeStore} alt="Chrome Store Link" />
         </a>
       </div>
