@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 // List of Twitch Categories to not display game data for
 const ignoreGameTitle = [
@@ -576,16 +577,14 @@ export default function GameHoverCard({ gameName }) {
                       if (alreadyAdded) return null;
 
                       return (
-                        <img
-                          key={platform + index}
+                        <Image
+                          key={`platform-${platform}-${index}`}
                           src={iconSrc}
                           alt={`${platform} Icon`}
-                          style={{
-                            width: "20px",
-                            height: "20px",
-                            marginRight: "8px",
-                            textAlign: "center",
-                          }}
+                          width={20}
+                          height={20}
+                          style={{ marginRight: "8px", textAlign: "center" }}
+                          unoptimized
                         />
                       );
                     })}
