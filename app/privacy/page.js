@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
               <h2 className="jersey-20-regular text-3xl font-semibold tracking-tight mb-4">
                 2. Third-Party Services
               </h2>
-              <p className="mb-4">When viewing prices, you're using:</p>
+              <p className="mb-4">When viewing links, you're using:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   ["Twitch", "https://www.twitch.tv/p/legal/privacy-policy/"],
@@ -76,19 +76,19 @@ export default function PrivacyPolicy() {
                 3. Key Points
               </h2>
               <div className="space-y-4">
-                <div className="p-4 rounded-lg border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20">
+                <div className="p-4 rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/50">
                   <h3 className="font-semibold mb-2">No Tracking</h3>
                   <p className="mb-0">No cookies, analytics, or fingerprints</p>
                 </div>
 
-                <div className="p-4 rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/20">
+                <div className="p-4 rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/50">
                   <h3 className="font-semibold mb-2">Browser Only</h3>
                   <p className="mb-0">
                     Works locally - no data leaves your device
                   </p>
                 </div>
 
-                <div className="p-4 rounded-lg border-l-4 border-red-500 bg-red-50 dark:bg-red-900/20">
+                <div className="p-4 rounded-lg border-l-4 border-purple-500 bg-purple-50 dark:bg-purple-900/50">
                   <h3 className="font-semibold mb-2">No Access To</h3>
                   <ul className="list-disc pl-6 mb-0">
                     <li>Your Twitch login</li>
@@ -104,11 +104,12 @@ export default function PrivacyPolicy() {
                 4. Your Control
               </h2>
               <div className="flex flex-col gap-4 md:flex-row md:justify-around">
-                <div className="text-center p-4 rounded-lg border">
+                <div className="text-center p-4 rounded-lg border transition-colors duration-300 ease-in-out hover:bg-purple-900/50">
                   <p className="font-semibold mb-2">🔄 Uninstall Anytime</p>
                   <p className="text-sm mb-0">Remove via Chrome settings</p>
                 </div>
-                <div className="text-center p-4 rounded-lg border">
+                <div className="text-center p-4 rounded-lg border transition-colors duration-300 ease-in-out hover:bg-purple-900/50">
+                  {" "}
                   <p className="font-semibold mb-2">📧 Contact</p>
                   <Link
                     href="mailto:gamescannercontact@gmail.com"
