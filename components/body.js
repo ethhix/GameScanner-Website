@@ -35,6 +35,7 @@ const Body = () => {
     "PUBG: BATTLEGROUNDS",
     "VALORANT",
     "Yasuke Simulator",
+    "Kings League",
   ];
 
   useEffect(() => {
