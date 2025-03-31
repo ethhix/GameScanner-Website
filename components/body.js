@@ -36,6 +36,7 @@ const Body = () => {
     "VALORANT",
     "Yasuke Simulator",
     "Kings League",
+    "Baller League",
   ];
 
   useEffect(() => {
